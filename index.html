@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bašin salaš – domaći okusi, miris drveta i topla dobrodošlica." />
+  <meta property="og:title" content="Bašin salaš" />
+  <meta property="og:description" content="Domaći okusi, miris drveta i topla dobrodošlica." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://filipfilipovic-cell.github.io/Basin-salas/salas.jpeg" />
+  <title>Bašin salaš</title>
+  <link rel="icon" href="basin-salas-logo-transparent.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Young+Serif&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --chalk: #f3f0e7;
+      --sand: #e8e2d1;
+      --field: #2b1b12;
+      --paprika: #a8481f;
+      --straw: #e3b64f;
+      --ink: #1c2620;
+      --muted: #596359;
+      --serif: "Young Serif", Georgia, serif;
+      --sans: "Figtree", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--chalk); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.65; }
+    img { max-width: 100%; }
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--straw); outline-offset: 3px; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+
+    /* Navigacija */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand img { display: block; width: 96px; height: 96px; object-fit: contain; }
+    .navlinks { display: flex; align-items: center; gap: 32px; }
+    .navlinks a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; }
+    .navlinks a:hover { color: var(--paprika); }
+    .btn { display: inline-block; padding: 14px 26px; border-radius: 999px; background: var(--paprika); color: #fff !important; font-weight: 700; font-size: 15px; text-decoration: none; transition: background .2s, transform .2s; }
+    .btn:hover { background: #873710; transform: translateY(-2px); }
+    .btn.light { background: var(--chalk); color: var(--ink) !important; }
+    .btn.light:hover { background: var(--straw); }
+
+    /* Hero */
+    .hero { background: var(--field); color: var(--chalk); overflow: hidden; }
+    .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; padding: 0; }
+    .hero-text { padding: 70px 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; }
+    h1 { font-size: clamp(50px, 6.6vw, 98px); line-height: .96; letter-spacing: -2px; }
+    .hero p { max-width: 460px; font-size: 19px; margin: 26px 0 34px; color: #e6d9c8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-photo { position: relative; align-self: stretch; min-height: 620px; background: #3a2a1d url("salas.jpeg") center 62% / cover no-repeat; border-radius: 280px 280px 0 0; margin-top: 40px; }
+    .stamp { position: absolute; left: -48px; bottom: 56px; width: 150px; height: 150px; border-radius: 50%; background: var(--straw); color: var(--field); display: grid; place-content: center; text-align: center; transform: rotate(-10deg); font-family: var(--serif); font-size: 24px; line-height: 1.05; border: 2px dashed var(--field); outline: 6px solid var(--straw); }
+    .stamp small { display: block; font-family: var(--sans); font-size: 11px; font-weight: 700; margin-top: 8px; line-height: 1.3; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero h1, .hero p, .hero-actions { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+      .hero p { animation-delay: .15s; }
+      .hero-actions { animation-delay: .3s; }
+      @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+    }
+
+    /* Traka */
+    .strip { background: var(--straw); color: var(--field); }
+    .strip .wrap { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .strip div { padding: 22px 24px; border-left: 1px solid rgba(43,27,18,.25); font-size: 15px; }
+    .strip div:first-child { border-left: 0; padding-left: 0; }
+    .strip b { display: block; font-family: var(--serif); font-weight: 400; font-size: 21px; }
+
+    /* Filozofija */
+    .intro { padding: 120px 0; }
+    .intro .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px; align-items: start; }
+    h2 { font-size: clamp(38px, 5vw, 64px); line-height: 1.04; letter-spacing: -1px; }
+    .intro p { margin: 10px 0 0; color: var(--muted); font-size: 18px; }
+    .intro p::first-line { color: var(--ink); font-weight: 500; }
+
+    /* Cenovnik */
+    .menu { background: var(--field); color: var(--chalk); padding: 110px 0; }
+    .menu .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; align-items: start; }
+    .menu-text { position: sticky; top: 40px; }
+    .menu-text p { color: #e0d2c4; margin: 18px 0 28px; max-width: 380px; }
+    .menu-photo { display: block; max-width: 640px; justify-self: end; background: var(--chalk); padding: 12px; border-radius: 4px; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+    .menu-photo img { display: block; width: 100%; height: auto; }
+
+    /* Posjeta */
+    .visit { background: var(--paprika); color: #fdf0e3; padding: 110px 0; }
+    .visit .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: center; }
+    .visit p { margin: 20px 0 30px; max-width: 400px; font-size: 18px; }
+    .details { background: var(--chalk); color: var(--ink); padding: 14px 34px; border-radius: 4px; }
+    .details div { padding: 22px 0; border-bottom: 1px solid rgba(28,38,32,.15); }
+    .details div:last-child { border: 0; }
+    .details small { display: block; color: var(--paprika); font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+    .details strong { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 1.3; }
+    .details a { color: inherit; text-decoration-color: rgba(168,72,31,.4); text-underline-offset: 4px; }
+    .details a:hover { color: var(--paprika); }
+
+    footer { padding: 28px 0; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 14px; }
+    footer .brand img { width: 60px; height: 60px; }
+
+    @media (max-width: 860px) {
+      .intro .wrap, .menu .wrap, .visit .wrap { grid-template-columns: 1fr; gap: 40px; }
+      .menu-text { position: static; }
+      .intro, .menu, .visit { padding: 76px 0; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 0; }
+      .hero-text { padding: 56px 0 48px; }
+      .hero-photo { min-height: 460px; margin-top: 0; border-radius: 200px 200px 0 0; }
+      .stamp { left: 12px; bottom: 28px; width: 120px; height: 120px; font-size: 19px; }
+      .menu-photo { justify-self: center; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .navlinks a:not(.btn) { display: none; }
+      .brand img { width: 72px; height: 72px; }
+      .strip .wrap { grid-template-columns: 1fr; }
+      .strip div { border-left: 0; border-top: 1px solid rgba(43,27,18,.25); padding: 16px 0; }
+      .strip div:first-child { border-top: 0; }
+      .details { padding: 8px 22px; }
+      footer .wrap { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a class="brand" href="#pocetna" aria-label="Bašin salaš – početna"><img src="basin-salas-logo-transparent.png" alt="Logo Bašin salaš" /></a>
+      <div class="navlinks">
+        <a href="#prica">Naša priča</a>
+        <a href="#cenovnik">Cenovnik</a>
+        <a class="btn" href="#posjeti">Posjeti nas</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="pocetna">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-text">
+          <h1>Mjesto za sporije i ljepše dane.</h1>
+          <p>Domaći okusi, miris drveta i topla dobrodošlica. Svrati, ostani malo duže i ponesi komadić naše priče sa sobom.</p>
+          <div class="hero-actions">
+            <a class="btn light" href="#prica">Otkrij našu priču</a>
+            <a class="btn" href="#cenovnik">Pogledaj cenovnik</a>
+          </div>
+        </div>
+        <div class="hero-photo" role="img" aria-label="Bašin salaš u sumrak, osvijetljena drvena terasa">
+          <div class="stamp" aria-hidden="true">ručno<br>rađeno<small>s ljubavlju<br>i strpljenjem</small></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div class="wrap">
+        <div><b>Otvoreno</b>09:00 – 21:00</div>
+        <div><b>Od 2016.</b>Malo mjesto, velike stvari</div>
+        <div><b>Zagreb</b>Ulica kestena 14</div>
+      </div>
+    </div>
+
+    <section class="intro" id="prica">
+      <div class="wrap">
+        <h2>Vjerujemo da najbolje stvari ne treba požurivati.</h2>
+        <p>Biramo lokalno, pripremamo pažljivo i njegujemo jednostavne rituale koji dan učine posebnim. Kod nas se svaka šalica, zalogaj i razgovor računaju.</p>
+      </div>
+    </section>
+
+
+    <section class="menu" id="cenovnik">
+      <div class="wrap">
+        <div class="menu-text">
+          <h2>Cenovnik</h2>
+          <p>Pogledajte našu ponudu piva, sokova, vina, žestokih i ostalih pića.</p>
+          <a class="btn light" href="cenovnik.jpeg" target="_blank" rel="noopener">Otvori u punoj veličini</a>
+        </div>
+        <a class="menu-photo" href="cenovnik.jpeg" target="_blank" rel="noopener" aria-label="Otvori cenovnik u punoj veličini">
+          <img src="cenovnik.jpeg" alt="Karta pića i cenovnik Bašin salaš" loading="lazy" />
+        </a>
+      </div>
+    </section>
+
+    <section class="visit" id="posjeti">
+      <div class="wrap">
+        <div>
+          <h2>Vrata su uvijek skoro otvorena.</h2>
+          <p>Javi se, rezerviraj stol ili navrati kad te put dovede. Veselimo ti se.</p>
+          <a class="btn light" href="tel:+385911234567">Nazovi nas</a>
+        </div>
+        <div class="details">
+          <div><small>Adresa</small><strong>Ulica kestena 14, Zagreb</strong></div>
+          <div><small>Radno vrijeme</small><strong>Pon – Sub · 09:00 – 21:00</strong></div>
+          <div><small>Kontakt</small><strong><a href="tel:+385911234567">+385 91 123 4567</a><br><a href="mailto:bok@sumastol.hr">bok@sumastol.hr</a></strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="#pocetna" aria-label="Bašin salaš – početna"><img src="basin-salas-logo-transparent.png" alt="Logo Bašin salaš" /></a>
+      <span>© 2026 Bašin salaš · napravljeno s toplinom</span>
+    </div>
+  </footer>
+</body>
+</html>
